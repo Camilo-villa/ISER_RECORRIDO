@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido Virtual - Réplica</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<!-- ====================== -->
+<!-- ESTILOS DEL HEADER ISER -->
+<!-- ====================== -->
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .main-header {
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        width: 100%;
+    }
+
+    .top-bar {
+        height: 10px;
+        background-color: #008080;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    .logo-area img {
+        max-height: 90px;
+        width: auto;
+    }
+
+    .social-and-search {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .btn {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+    }
+
+    .facebook { background-color: #3b5998; }
+    .twitter { background-color: #1da1f2; }
+    .instagram { background-color: #4c6883; }
+    .youtube { background-color: #ff0000; }
+</style>
+
+<!-- HEADER ISER -->
+<header class="main-header">
+    <div class="top-bar"></div>
+
+    <div class="nav-container">
+        
+        <div class="logo-area">
+            <a href="/">
+                <img 
+                    src="https://www.iser.edu.co/wp-content/uploads/2024/07/cropped-cropped-LOGO-NEGRO-HORIZONTAL-01-2-2048x818.png"
+                    alt="ISER - Instituto Superior de Educación Rural"
+                    class="iser-logo-img"
+                >
+            </a>
+        </div>
+
+        <div class="social-and-search">
+            <a href="#" class="btn facebook">Facebook</a>
+            <a href="#" class="btn twitter">Twitter</a>
+            <a href="#" class="btn instagram">Instagram</a>
+            <a href="#" class="btn youtube">YouTube</a>
+        </div>
+
+    </div>
+</header>
+
+<!-- =============================== -->
+<!-- ESTILOS DEL HERO Y DEMÁS SECCIONES -->
+<!-- =============================== -->
+<style>
+/* Estilos Globales Básicos */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background-image: url('https://www.iser.edu.co/wp-content/uploads/2023/09/WhatsApp-Image-2022-06-28-at-2.24.22-PM-1-1024x769.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 100px 10%;
+    max-width: 600px;
+    padding-top: 15vh;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-start {
+    display: inline-block;
+    background-color: #d1946e;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-start:hover { background-color: #b87d55; }
+
+/* FEATURES */
+.features-section {
+    padding: 40px 10%;
+    background-color: white;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-text h3 { margin-top: 0; }
+
+.feature-text p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* GALLERY */
+.gallery-section {
+    text-align: center;
+    padding: 40px 10% 80px;
+}
+
+.gallery-section h2 { font-size: 2rem; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .feature-container { flex-direction: column; }
+    .hero-content h1 { font-size: 2.5rem; }
+}
+</style>
+
+<!-- HERO -->
+<header class="hero-section">
+    <div class="hero-content">
+        <h1>Recorrido virtual</h1>
+        <p>Explora en línea nuestros espacios desde la comodidad de tu hogar.</p>
+        <a href="{% url 'isers' %}" class="btn-start">Comenzar recorrido</a>
+    </div>
+</header>
+
+<!-- FEATURES -->
+<section class="features-section">
+    <div class="feature-container">
+        <div class="feature-item">
+            <img src="https://i.pinimg.com/736x/52/02/0d/52020dc1f3694ab3dabb0e0b859897a3.jpg" class="feature-icon">
+            <div class="feature-text">
+                <h3>Experiencia inmersiva</h3>
+                <p>Sumérgete en una experiencia realista y envolvente desde cualquier dispositivo.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <img src="https://i.pinimg.com/736x/62/75/41/627541ee52c7cc8be13d88549350ebec.jpg" class="feature-icon">
+            <div class="feature-text">
+                <h3>Interactividad</h3>
+                <p>Navega a tu propio ritmo interactúa con elementos en el entorno virtual.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <img src="https://i.pinimg.com/736x/e1/d9/9b/e1d99bbeb8987380975e3eb2c9849e25.jpg" class="feature-icon">
+            <div class="feature-text">
+                <h3>Acceso 24/7</h3>
+                <p>Visita nuestro recorrido virtual en cualquier momento y tanto como desees.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>

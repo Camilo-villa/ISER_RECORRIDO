@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <style>
+        /* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(237, 236, 236);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BARRA SUPERIOR */
+.top-bar {
+    height: 10px;
+    background-color: #008080;
+    width: 100%;
+}
+
+/* HEADER */
+header {
+    
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px ;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    width: 15%;
+    position: absolute;
+    left: 20px;
+}
+
+/* MENÚ PRINCIPAL IZQUIERDO */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-ini{
+   color: #008080;
+   
+    background-color: transparent;
+        border: 2px solid #008080;
+        border-radius: 5px; 
+        padding:5px;
+        margin-right: 15px;
+        font-size: 1.5em;
+
+}
+.menu-re{
+    
+   color: #008080;
+        border-radius: 5px; 
+        padding:5px;
+        margin-right: 15px;
+        font-size: 1.5em;
+}
+
+/* MENÚ CONTACTO */
+.menu-principal ul {
+    list-style: none;
+}
+
+.cont {
+    color: #008080;
+    font-size: 1.4em;
+    padding: 5px;
+}
+
+.desplegable {
+    padding-left: 300%;
+    position: relative;
+}
+
+/* SUBMENÚ */
+.submenu-contactos {
+    
+    display: none;
+    position: absolute;
+    min-width: 230px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background: visible;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.desplegable:hover .submenu-contactos {
+    display: block;
+    
+}
+
+/* === NUEVO: ESTILO DE LOS ICONOS ANIMADOS === */
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 12px;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    transition: width 0.4s ease, background 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.social .text {
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    font-size: 16px;
+}
+
+/* Hover animado */
+.social:hover {
+    width: 170px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 115, 255, 0.4);
+}
+
+.social:hover .text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Colores por red */
+.facebook:hover { background: #1877f2; }
+.instagram:hover { background: #e1306c; }
+.twitter:hover   { background: #1da1f2; }
+.youtube:hover   { background: #ff0000; }
+
+
+/* IMAGEN PRINCIPAL */
+.imagen {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+
+/* HERO */
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+}
+
+.btn-start {
+    display: inline-block;
+    background-color: #d1946e;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-start:hover {
+    background-color: #b87d55;
+}
+
+/* FEATURES */
+.features-section {
+    padding: 50px 10%;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.feature-item {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    width: 90px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.feature-text h3 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.feature-text p {
+    color: #444;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+/* responsive*/
+@media (max-width: 768px) {
+
+    header {
+             /* Apila elementos */
+        padding: 50px ;
+        
+        font-size: 1em;
+
+    }
+
+    .logo {
+        top: -5%;
+        padding-left: 20%;
+        flex-direction: row;
+        width: 45%;                   /* Logo más grande */
+        margin-bottom: 10px;
+    }
+    .desplegable{
+
+        flex-direction: row-reverse;
+        padding-left: 0;
+
+    }
+  .desplegable:hover .submenu-contactos {
+    display: block;
+    margin-left: -30%;
+}
+
+    
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    header .logo {
+        width: 20%;
+    }
+    .desplegable{
+
+        flex-direction: row-reverse;
+        padding-left: 90%;
+
+    }
+
+}
+@media (max-width: 768px) {
+    .features-section {
+        padding: 3px;
+    }
+
+    .feature-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .feature-item {
+        width: 100%;
+        padding: 1%;
+    }
+
+    .feature-icon {
+        width: 70px;
+    }
+
+    .feature-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-text p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+    </style>
+
+    <!-- BARRA SUPERIOR VISIBLE -->
+    <div class="top-bar"></div>
+
+    <header>
+        <div class="nav-menu">
+            <a href="" class="menu-ini">Inicio</a>
+            <a href="{% url 'recorrido' %}" class="menu-re">Recorrido</a>
+        </div>
+        
+        <img src="https://www.iser.edu.co/wp-content/uploads/2024/07/cropped-cropped-LOGO-NEGRO-HORIZONTAL-01-2-1024x409.png" 
+             alt="Logo ISER" class="logo">
+
+       <nav class="menu-principal">
+    <ul>
+        <li class="desplegable">
+            <a href="#" class="cont">Contacto</a>
+
+            <ul class="submenu-contactos">
+                <li>
+                    <a href="https://www.facebook.com/iser.pamplona" class="social facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="text">Facebook</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.instagram.com/iser.oficial/?hl=es" class="social instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="text">Instagram</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://x.com/Iser1956" class="social twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/@ISER.Oficial" class="social youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span class="text">YouTube</span>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+</nav>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    </header>
+
+    <!-- IMAGEN HERO -->
+    <div class="nav-img">
+        <img src="https://ww1.iser.edu.co/iser/hermesoft/portalIG/home_1/recursos/imagenes/2021/14022021/rec_fisicos_1.jpg" class="imagen" alt="Imagen principal">
+    </div>
+
+    <!-- TEXTO HERO -->
+    <div class="hero-content">
+        <h1>Recorrido virtual</h1>
+        <p>Explora en línea nuestros espacios desde la comodidad de tu hogar.</p>
+        <a href="{% url 'recorrido' %}" class="btn-start">Comenzar recorrido</a>
+    </div>
+
+    <!-- SECCIÓN DE BENEFICIOS -->
+    <section class="features-section">
+        <div class="feature-container">
+
+            <div class="feature-item">
+                <img src="https://i.pinimg.com/736x/52/02/0d/52020dc1f3694ab3dabb0e0b859897a3.jpg" class="feature-icon">
+                <div class="feature-text">
+                    <h3>Experiencia inmersiva</h3>
+                    <p>Sumérgete en una experiencia realista y envolvente desde cualquier dispositivo.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <img src="https://i.pinimg.com/736x/62/75/41/627541ee52c7cc8be13d88549350ebec.jpg" class="feature-icon">
+                <div class="feature-text">
+                    <h3>Interactividad</h3>
+                    <p>Navega a tu propio ritmo e interactúa con elementos en el entorno virtual.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <img src="https://i.pinimg.com/736x/e1/d9/9b/e1d99bbeb8987380975e3eb2c9849e25.jpg" class="feature-icon">
+                <div class="feature-text">
+                    <h3>Acceso 24/7</h3>
+                    <p>Visita nuestro recorrido virtual en cualquier momento y tanto como desees.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

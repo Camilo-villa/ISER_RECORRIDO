@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réplica de Cabecera ISER</title>
+</head>
+<body>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+    }
+
+    .main-header {
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        width: 100%;
+    }
+
+    /* Barra superior */
+    .top-bar {
+        height: 10px;
+        background-color: #008080;
+    }
+
+    /* Contenedor del header */
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    /* Logo */
+    .logo-area img {
+        max-height: 90px;
+        width: auto;
+    }
+
+    /* Botones */
+    .social-and-search {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+    }
+
+    .btn {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.8; }
+
+    .icon {
+        margin-right: 5px;
+        font-weight: bold;
+    }
+
+    .facebook { background-color: #3b5998; }
+    .twitter { background-color: #1da1f2; }
+    .instagram { background-color: #4c6883; }
+    .youtube { background-color: #ff0000; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .iser-logo-img { max-height: 70px; }
+        .btn { padding: 6px 10px; font-size: 12px; }
+    }
+
+    @media (max-width: 480px) {
+        .iser-logo-img { max-height: 60px; }
+        .btn { padding: 5px 8px; font-size: 11px; }
+    }
+
+    /* --- CONTENEDOR RESPONSIVE DEL RECORRIDO --- */
+    .tour-container {
+        width: 100%;
+        height: 70vh; /* Altura dinámica */
+        max-height: 700px;
+        overflow: hidden;
+        
+    }
+
+    @media (max-width: 480px) {
+        .tour-container {
+            height: 55vh; /* Más pequeño en celular */
+        }
+    }
+</style>
+
+<header class="main-header">
+    <div class="top-bar"></div>
+
+    <div class="nav-container">
+        
+        <!-- Logo -->
+        <div class="logo-area">
+            <a href="/">
+                <img 
+                    src="https://www.iser.edu.co/wp-content/uploads/2024/07/cropped-cropped-LOGO-NEGRO-HORIZONTAL-01-2-2048x818.png"
+                    alt="ISER - Instituto Superior de Educación Rural"
+                    class="iser-logo-img"
+                >
+            </a>
+        </div>
+
+        <!-- Botones -->
+        <div class="social-and-search">
+            <a href="#" class="btn facebook"><span class="icon">f</span> Facebook</a>
+            <a href="#" class="btn twitter"><span class="icon">X</span> Twitter</a>
+            <a href="#" class="btn instagram"><span class="icon">📸</span> Instagram</a>
+            <a href="#" class="btn youtube"><span class="icon">▶</span> YouTube</a>
+        </div>
+
+    </div>
+</header>
+
+<!-- REPRODUCTOR KUULA RESPONSIVE -->
+<div class="tour-container">
+    <script 
+        src="https://static.kuula.io/embed.js"
+        data-kuula="https://kuula.co/share/collection/7Hbn0?logo=-1&info=0&fs=1&vr=1&thumbs=-1&alpha=0.75&inst=0"
+        data-width="100%"
+        data-height="100%">
+    </script>
+</div>
+
+</body>
+</html>

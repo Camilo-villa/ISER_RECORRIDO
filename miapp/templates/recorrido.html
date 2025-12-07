@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/recorrido.css">
+</head>
+<body>
+    <style>
+        /* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(237, 236, 236);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BARRA SUPERIOR */
+.top-bar {
+    height: 10px;
+    background-color: #008080;
+    width: 100%;
+}
+
+/* HEADER */
+header {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    width: 15%;
+    position: absolute;
+    left: 20px;
+}
+
+/* MENÚ PRINCIPAL IZQUIERDO */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-ini, .menu-re {
+    color: #008080;
+    font-size: 1.5em;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu-re {
+    border: 2px solid #008080;
+}
+
+/* MENÚ CONTACTO */
+.menu-principal ul {
+    list-style: none;
+}
+
+.cont {
+    color: #008080;
+    font-size: 1.4em;
+    padding: 5px;
+}
+
+.desplegable {
+    padding-left: 300%;
+    position: relative;
+}
+
+/* SUBMENÚ */
+.submenu-contactos {
+    display: none;
+    position: absolute;
+    min-width: 230px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background: visible;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.desplegable:hover .submenu-contactos {
+    display: block;
+}
+
+/* ICONOS ANIMADOS */
+.social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    padding: 12px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    color: black;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.35s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.social .text {
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: 0.3s ease;
+}
+
+.social:hover {
+    width: 170px;
+    color: white;
+}
+
+/* COLORES POR RED */
+.facebook:hover { background: #1877f2; }
+.instagram:hover { background: #e1306c; }
+.twitter:hover   { background: #1da1f2; }
+.youtube:hover   { background: #ff0000; }
+
+/* Mostrar texto */
+.social:hover .text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* SECCIÓN KULUU */
+.kuluu-section {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 3em;
+    color: #008080;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 15px 0 10px;
+}
+
+.card-description {
+    color: #666;
+}
+
+/* BOTÓN */
+.cta-button {
+    padding: 12px 30px;
+    background: #008080;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,128,128,0.4);
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #009999;
+    transform: translateY(-2px);
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+             /* Apila elementos */
+        padding: 50px ;
+        
+        font-size: 1em;
+
+    }
+
+    .logo {
+        top: -5%;
+        padding-left: 20%;
+        flex-direction: row;
+        width: 45%;                   /* Logo más grande */
+        margin-bottom: 10px;
+    }
+    .desplegable{
+
+        flex-direction: row-reverse;
+        padding-left: 0;
+
+    }
+  .desplegable:hover .submenu-contactos {
+    display: block;
+    margin-left: -30%;
+}
+.kuluu-section {
+    gap: 30px;
+        padding: 3px ;
+    }
+
+    .cards-container {
+        gap: 20px;
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .card-icon {
+        font-size: 2.4em;
+    }
+
+    .card-title {
+        font-size: 1.1em;
+    }
+
+    .card-description {
+        font-size: 0.95em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    header .logo {
+        width: 20%;
+    }
+    .desplegable{
+
+        flex-direction: row-reverse;
+        padding-left: 90%;
+
+    }
+
+}
+
+
+    </style>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar"></div>
+
+    <header>
+
+        <div class="nav-menu">
+            <a href="{% url 'iseer' %}" class="menu-ini">Inicio</a>
+            <a href="" class="menu-re">Recorrido</a>
+        </div>
+
+        <img src="https://www.iser.edu.co/wp-content/uploads/2024/07/cropped-cropped-LOGO-NEGRO-HORIZONTAL-01-2-1024x409.png" 
+             alt="Logo ISER" class="logo">
+
+        <nav class="menu-principal">
+            <ul>
+                <li class="desplegable">
+                    <a href="#" class="cont">Contacto</a>
+
+                    <ul class="submenu-contactos">
+
+                        <li>
+                            <a href="https://www.facebook.com/iser.pamplona" class="social facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span class="text">Facebook</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.instagram.com/iser.oficial/?hl=es" class="social instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span class="text">Instagram</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://x.com/Iser1956" class="social twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span class="text">Twitter</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.youtube.com/@ISER.Oficial" class="social youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span class="text">YouTube</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/collection/7Hbn0?logo=-1&info=0&fs=1&vr=1&gyro=0&thumbs=-1&alpha=0.75&inst=0" data-width="100%" data-height="640px"></script>
+
+
+    <main class="kuluu-section">
+        
+        <div class="cards-container">
+            
+            <div class="card">
+                <i class="fas fa-graduation-cap card-icon"></i>
+                <h3 class="card-title">Excelencia Académica</h3>
+                <p class="card-description">Programas actualizados y acreditados, docentes altamente calificados.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-map-marked-alt card-icon"></i>
+                <h3 class="card-title">Enfoque Social y Rural (ISER)</h3>
+                <p class="card-description">Formación de líderes comprometidos con el desarrollo sostenible.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-globe-americas card-icon"></i>
+                <h3 class="card-title">Proyección Global</h3>
+                <p class="card-description">Convenios internacionales y enfoque en habilidades sin fronteras.</p>
+            </div>
+
+        </div>
+
+        <a href="https://www.iser.edu.co/" class="cta-button">Explora el Campus Ahora</a>
+
+    </main>
+
+
+    
+</body>
+</html>
